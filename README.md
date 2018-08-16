@@ -1,4 +1,4 @@
-# Cogear.JS plugin **cogear-plugin-compressor**
+# Cogear.JS plugin `cogear-plugin-compressor`
 
 Add `compressor-webpack-plugin` in production mode.
 
@@ -12,3 +12,7 @@ npm install cogear-plugin-cogear-plugin-compressor
 ```
 
 Plugin will loads up automatically.
+
+# Docs
+
+More info: [https://cogearjs.org/docs/plugins](https://cogearjs.org/docs/plugins).
