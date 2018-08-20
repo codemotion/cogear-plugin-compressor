@@ -1,7 +1,7 @@
 {
 	"name": "cogear-plugin-compressor",
 	"description": "Compress webpack assets in production",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"author": "Dmitriy Beliaev<admin@cogearjs.org>",
 	"repository": "htts://github.com/codemotion/cogear-plugin-compressor",
 	"homepage": "htts://github.com/codemotion/cogear-plugin-compressor",
