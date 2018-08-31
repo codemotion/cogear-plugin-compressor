@@ -1,3 +1,3 @@
 # 1.0.1
 
-* Add fonts compression.
+* Add fonts compression.cogear
