@@ -2,6 +2,8 @@ const CompressionPlugin = require('compression-webpack-plugin');
 const zlib = require('zlib');
 const Buffer = require('buffer').Buffer;
 const fs = require('fs');
+const path = require('path');
+// const chalk = require('chalk');
 const now = require('performance-now');
 module.exports = {
   apply(){
@@ -20,7 +22,7 @@ module.exports = {
     });
     cogear.on('build.page.writeAfter',([page,html])=>{
       if(!['production','build','deploy'].includes(cogear.mode)) return;
-      let start = now();
+      // let start = now();
       zlib.gzip(new Buffer(html),(err,result)=>{
         if(err){
           console.error(err);
@@ -39,7 +41,7 @@ module.exports = {
     // Add support of cogear-plugin-pages-json
     cogear.on('pages.json',(file)=>{
       if(!['production','build','deploy'].includes(cogear.mode)) return;
-      let start = now();
+      // let start = now();
       zlib.gzip(fs.readFileSync(file),(err,result)=>{
         if(err){
           console.error(err);
@@ -51,6 +53,25 @@ module.exports = {
           );
           let filePath = file.replace(process.cwd(),'.');
           // ora().succeed(`Compressor: ${chalk.bold(filePath)} => ${chalk.bold(filePath + '.gz')} (${prettyMs(now()-start)})`);
+        } catch (e){
+          console.error(e);
+        }
+      });
+    });
+    cogear.on('rss.done',config=>{
+      // let start = now();
+      const file = path.join(cogear.options.output,'rss.xml');
+      zlib.gzip(fs.readFileSync(file),(err,result)=>{
+        if(err){
+          console.error(err);
+        }
+        try {
+          fs.writeFileSync(
+            file + '.gz',
+            result
+          );
+          let filePath = file.replace(process.cwd(),'.');
+          // cogear.loader.succeed(`Compressor: ${chalk.bold(filePath)} => ${chalk.bold(filePath + '.gz')} (${prettyMs(now()-start)})`);
         } catch (e){
           console.error(e);
         }

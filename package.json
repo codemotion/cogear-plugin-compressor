@@ -9,6 +9,7 @@
 	"main": "./plugin.js",
 	"devDependencies": {},
 	"dependencies": {
+		"chalk": "^2.4.1",
 		"compression-webpack-plugin": "^1.1.11",
 		"ora": "^3.0.0",
 		"performance-now": "^2.1.0",
