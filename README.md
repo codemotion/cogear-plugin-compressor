@@ -1,18 +1,18 @@
 # Cogear.JS plugin `cogear-plugin-compressor`
 
-Add `compressor-webpack-plugin` in production mode.
+Adds `compressor-webpack-plugin` in production mode.
 
 # Installation
 
-Go to the site folder and install plugin with command:
+Go to the site folder and install the plugin with this command:
 ```bash
-yarn add cogear-plugin-cogear-plugin-compressor
+yarn add cogear-plugin-compressor
 # or 
-npm install cogear-plugin-cogear-plugin-compressor
+npm install cogear-plugin-compressor
 ```
 
-Plugin will loads up automatically.
+The plugin will load up automatically.
 
 # Docs
 
-More info: [https://cogearjs.org/docs/plugins](https://cogearjs.org/docs/plugins).
+More info about Cogear plugins: [https://cogearjs.org/docs/plugins](https://cogearjs.org/docs/plugins).
